@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube 官方網站</title>
+    <style>
+        /*基本設定 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            min-height: 100%;
+            font-family: "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* 背景圖片半模糊設定 (.png 格式) */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* 圖片已改為同資料夾下的 background.png */
+            background-image: url('background.png'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            filter: blur(10px); /* 模糊度 */
+            background-color: rgba(0, 0, 0, 0.25); /* 稍微壓暗背景 */
+            background-blend-mode: multiply;
+            z-index: -1; 
+            transform: scale(1.1); /* 防止邊緣白邊 */
+        }
+
+        /* 最上方頭貼區塊 */
+        .header-banner {
+            width: 100%;
+            padding: 40px 20px 20px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            /* 頭貼預設讀取同資料夾下的 avatar.png */
+            background-image: url('avatar.png');
+            background-size: cover;
+            background-position: center;
+            border-radius: 50%; /* 圓形頭貼 */
+            border: 4px solid #9999ff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            margin-bottom: 15px;
+        }
+
+        .channel-title {
+            color: #ffffff;
+            font-size: 2rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+            font-weight: bold;
+        }
+
+        /* 中間內文區塊 (多個區塊撐長網頁) */
+        .main-content {
+            flex: 1;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px 20px 60px 20px;
+        }
+
+        /* 內容圖層卡片 */
+        .section-card {
+            background-color: rgba(255, 255, 255, 0.9); /* 半透明白底 */
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            margin-bottom: 30px; /* 區塊之間的間距 */
+        }
+
+        .section-card h2 {
+            font-size: 1.6rem;
+            color: #1d0067; /* YouTube 紅 */
+            margin-bottom: 15px;
+            border-left: 5px solid #0303aa;
+            padding-left: 10px;
+        }
+
+        .section-card p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #333333;
+            margin-bottom: 15px;
+        }
+
+        .section-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 最下面的黑底與網址區塊 (Footer) */
+        footer {
+            background-color: #010130aa; /* 深黑底 */
+            color: #020254aa;
+            text-align: center;
+            padding: 40px 20px;
+            width: 100%;
+            margin-top: auto;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            color: #aaaaaa;
+            margin-bottom: 20px;
+        }
+
+        /* 4 個網址連結的排版 */
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px; /* 連結之間的間距 */
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-links a {
+            color: #1616c7; /* 連結顏色 */
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.05rem;
+            padding: 8px 16px;
+            border: 1px solid #4e2bfc;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #ffffff;
+            background-color: #0000cc;
+            border-color: #0000cc;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 最上方頭貼區塊 -->
+    <header class="header-banner">
+        <div class="avatar"></div>
+        <div class="channel-title">您的 YouTube 頻道官方網站</div>
+    </header>
+
+    <!-- 內文 -->
+    <main class="main-content">
+
+        <!-- 區塊一：關於我 -->
+        <section class="section-card">
+            <h2>關於我</h2>
+            <p>歡迎來北投石的官方網站~我是一名國三生(113年升國中)，住在臺灣，會寫一點程式、彈鋼琴(Yamaha6級喔~)、剪影片(🤔廢話)和一些雜七雜八的。</p>
+            <p>我在遊戲中的匿名大多是Hokutolite(hokutolite)、hokutolite1、北投石或陽明山.北投石，至於原因嗎...嘿嘿自己猜~</p>
+        </section>
+
+        <!-- 區塊二：主要內容 -->
+        <section class="section-card">
+            <h2>為何想接觸網路世界</h2>
+            <p>我的頻道內容主要涵蓋四大領域：程式、音樂、遊戲和日常。我之所以想要我之所以想要接觸網路世界一開始主要是因為想要分享自己玩遊戲時的精采片段給朋友看，後來逐漸學會剪及技巧及更多電腦知識後，就逐漸轉變成認真營運(雖然因為要會考開始沒空了)。</p>
+        </section>
+
+        <!-- 區塊三：最新公告 -->
+        <section class="section-card">
+            <h2>最新公告</h2>
+            <p>1.因為北投石本人要轉被會考，可能在會考前都無法發片或偶爾發片。</p>
+            <p>2.如果要如果要與北投石合作，請私訊。Discord:hokutolite Gmail:Hokutolite217@gmail.com。</p>
+        </section>
+
+    </main>
+<!-- 最下面黑底與網址 -->
+    <footer>
+        <p>© 2026 Hokutolite官網 版權所有，翻印必究(?)</p>
+        
+        <div class="footer-links">
+            <!-- 連結 1：YouTube 主頻道 -->
+            <a href="https://www.youtube.com/channel/UCpdqw6Vl0eyfHVy5Y8GO5Yg">▶ YouTube 頻道</a>
+
+            <!-- 連結 2：DC -->
+            <a href="https://youtube.com" target="_blank">💬 Discord 社群d</a>
+            
+            <!-- 連結 3：其他 -->
+            <a href="https://youtu.be/HvYPT7_Z3DQ">🎫 精選播放清單或影片(不定期更換)</a>
+         </div>
+    </footer>
+
+</body>
+</html>
